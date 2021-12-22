@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ItemMypageBottom.css'
-import { items } from '../assets/dummyData'
-import Items from './MainPageComponent/Items'
+import { items } from '../../assets/dummyData'
+import Items from '../MainPageComponent/Item'
 
 
 function ItemMypageBottom () {
@@ -11,7 +11,7 @@ function ItemMypageBottom () {
         
         <div> 
           <article className="itemList">
-           {items.map((item) => <Items key={item.id} item={item} />)}
+            {items.map((item) => <Items key={item.id} item={item} />)}
           </article>
         </div>
 

@@ -4,14 +4,14 @@
     width: 75%;
     vertical-align: top;
     margin-left: 3vw;
-  }
-  
+}
+
 #mypage-Container{
     width: 100%;
     height: auto;
     margin-top: 20px;
     margin-bottom: 200px;
-  }
+}
 
 .profile{
     /* border:1px solid black; */
@@ -27,7 +27,6 @@
     display: flex;
 }
 .profile-Img{
-    background-color: #f3f3f3;
     width: 30%;
     /* flex: 0.4; */
     margin: 0px 10% 0px 2%;
@@ -42,7 +41,7 @@
 }
 .welcome {
     /* flex: 0.4; */
-    padding: 1%;
+    padding: 1% 1%;
     /* border: 1px solid black; */
     box-sizing: border-box;
     width: 50%;

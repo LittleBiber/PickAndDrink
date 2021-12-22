@@ -9,7 +9,7 @@ export default function Item({item}) {
         </div>
 
         <div className='rankItemInfo'>
-          <div className='emoji'>🥇</div>
+          <div className='emoji'>⭐</div>
           <div>{item.category}1등</div>
           <h2 >{item.name}</h2>
         </div>

@@ -5,11 +5,11 @@ import ItemMain from "../components/MainPageComponent/ItemMain";
 import Footer from "../components/Footer";
 import { useState } from "react";
 
-export default function Main() {
-
+export default function Main({isLogin, userinfo}) {
+  
   return (
     <div>
-      <Header />
+      <Header isLogin={isLogin} userinfo={userinfo}/>
       <Banner />
       <ItemMain />
       <Footer />

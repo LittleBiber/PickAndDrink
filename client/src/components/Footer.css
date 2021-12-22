@@ -1,8 +1,11 @@
 #footer {
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-  height: 70px;
+  height: 100px;
   text-align: center;
-  font-size: 30px;
+  font-size: 15px;
   line-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -3,6 +3,7 @@
   border: 1px solid black;
   text-align: center;
   padding: 2vw;
+  margin: 0 auto 10vh;
 }
 
 #loginPageContainer p a {
@@ -15,6 +16,14 @@
   margin: 0 auto;
   width: 50%;
 }
+
+/* #loginImg:nth-child(1) {
+  width: 30%;
+}
+
+#loginImg img:nth-child(2) {
+  width: 100%;
+} */
 
 #loginImg img {
   display: block;

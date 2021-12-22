@@ -8,7 +8,7 @@ export default function Item({item}) {
     </div>
     <div className='eventInfo'>
       <div className='eventCategory'>{item.category}<div className='star'>⭐</div></div>
-      <div>{item.name} {item.price}원</div>
+      <div>{item.name} <br /> {item.price}원</div>
     </div>
   </div>
   )

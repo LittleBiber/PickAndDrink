@@ -4,6 +4,7 @@
     width: 20%;
     height: 300px;
 }
+
 #sidebar-container{
     list-style: none;
     font-size: 1.2vw;
@@ -12,13 +13,23 @@
     
 
 }
-.sidebar-category{
+.sidebar-category {
     padding-left: 4px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 2.5vh;
     margin-top: 3vh;
-    
+    cursor: pointer;
 }
+
+.sidebar-category:hover {
+    background-color: #87CEFA;
+    border-radius: 3px;
+}
+
+.sidebar-category:active {
+    background-color: white;
+}
+
 .sidebar-category:nth-child(1){
     font-size: 1.2vw;
     font-weight: bold;

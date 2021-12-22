@@ -6,8 +6,10 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import './Signup.css'
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 export default function Signup(props) {
+  const navigate = useNavigate()
   const [inputs, setInputs] = useState({
     email: '',
     username: '',
@@ -49,6 +51,7 @@ export default function Signup(props) {
         props.setToken(result.data.accessToken)
         props.handleLogin(true)
         alert('회원가입이 완료되었습니다.')
+        navigate('/')
       }
     })
     .catch(err => {

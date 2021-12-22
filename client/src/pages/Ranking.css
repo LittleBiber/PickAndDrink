@@ -1,6 +1,10 @@
 #ranking-container{
-    margin: 0 15vw;
+    margin: 0 15vw 80px;
     border: 1px solid #ccc;
     padding: 45px;
+}
 
+#ranking-nav {
+    border: 1px solid black;
+    margin: 1% 2%;
 }

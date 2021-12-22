@@ -1,18 +1,11 @@
- *{
+* {
   box-sizing: border-box;
   color: rgb(51, 51, 51);
 }
-#body {
-  margin: 0 100px 50px 100px;
-}
-/*
-body {
-  margin-top: 50px;
-  margin-left: 50px;
-  margin-bottom: 50px;
-  margin-right: 50px;
-}
 
-#body {
-  width: 1500px;
-} */
+body {
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}

@@ -10,12 +10,29 @@ import Main from './pages/Main'
 import axios from 'axios';
 import './App.css';
 
+
+
 export default function App () {
   const [isLogin, setIsLogin] = useState(false); // 로그인 여부: true/fale로 구분
   const [userinfo, setUserinfo] = useState(null); // 개인정보 저장
   const [accessToken, setAccessToken] = useState(null) // 액세스토큰: null/accToken
-
   const history = useNavigate(); // Signup, login 페이지 연결 부탁드립니다.
+
+  useEffect(() => {
+    if(isLogin) {
+      axios({
+        method: 'GET',
+        url: `https://localhost:8443/auth/me`,
+        headers: {
+          accept: 'application/json',
+          Authorization: accessToken
+        }
+      })
+      .then((res) => {
+        setUserinfo(res.data.userData)
+      })
+    }
+  },[isLogin])
 
   const handleLogin = (value) => {
     setIsLogin(value)
@@ -60,12 +77,12 @@ export default function App () {
 
       <Routes>
         <Route path='/login'element={<Login setToken={handleAccessToken} handleLogin={handleLogin}/>} />
-        <Route path='/'element={<Main/>} />
-        <Route path='/mypage'element={<Mypage accessToken={accessToken} />} />
-        <Route path='/event'element={<Event/>} />
-        <Route path='/ranking'element={<Ranking/>} />
-        <Route path='/signin'element={<Signin/>} />
-        <Route path='/signup'element={<Signup setToken={handleAccessToken} handleLogin={handleLogin} />} />
+        <Route path='/'element={<Main isLogin={isLogin} userinfo={userinfo}/>} />
+        <Route path='/mypage'element={<Mypage isLogin={isLogin} userinfo={userinfo} accessToken={accessToken}/>} />
+        <Route path='/event'element={<Event isLogin={isLogin} userinfo={userinfo}/>} />
+        <Route path='/ranking'element={<Ranking isLogin={isLogin} userinfo={userinfo}/>} />
+        <Route path='/signin'element={<Signin isLogin={isLogin} userinfo={userinfo}/>} />
+        <Route path='/signup'element={<Signup isLogin={isLogin} setToken={handleAccessToken} handleLogin={handleLogin} userinfo={userinfo}/>} />
       </Routes>
 
     </div>

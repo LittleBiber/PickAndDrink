@@ -1,14 +1,26 @@
 import React from "react";
+import { useState } from "react";
 
 export default function Nav({getEvent}) {
+  const event = ['전체', '1 + 1', '2 + 1', '금액 할인']
+
+  const [currentTab, setCurrentTab] = useState(0)
+
+  function selectTabHandler(e, idx) {
+    getEvent(e.target.textContent)
+    setCurrentTab(idx)
+  }
 
   return (
     <nav id='eventGroupContainer'>
         <ul id="eventGroup">
-          <li onClick={e => getEvent(e.target.textContent)}>전체</li>
-          <li onClick={e => getEvent(e.target.textContent)}>1 + 1</li>
-          <li onClick={e => getEvent(e.target.textContent)}>2 + 1</li>
-          <li onClick={e => getEvent(e.target.textContent)}>금액 할인</li>
+          {event.map((event, index) => {
+            return (
+<li key={index} className={currentTab === index ? 'submenu focused' : 'submenu'} onClick={(e) => selectTabHandler(e, index)}>
+{event}
+</li>
+            )
+          })}
         </ul>
       </nav>
   )
